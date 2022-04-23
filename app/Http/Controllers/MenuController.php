@@ -18,7 +18,6 @@ class MenuController extends Controller
     {
 
         $pizza_menu=Menu::where('name','Pizza')->first('id')->SubMenus;
-
         return view('menu',compact('pizza_menu'));
     }
 
@@ -54,7 +53,7 @@ class MenuController extends Controller
 
 
     }
-    public function shows()
+    public function menuAjax(): \Illuminate\Http\JsonResponse
     {
         $pizza=Menu::where('name','Pizza')->first('id')->SubMenus;
         $pasta=Menu::where('name','Pasta')->first('id')->SubMenus;

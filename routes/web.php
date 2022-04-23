@@ -15,4 +15,4 @@ use App\Http\Controllers\MenuController;
 */
 Route::resource('menus', MenuController::class);
 
-Route::Post('/a/menus',[MenuController::class , 'shows'])->name('menu.showss');
+Route::GET('/list',[MenuController::class , 'menuAjax'])->name('menu.ajax');
