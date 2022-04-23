@@ -36,19 +36,21 @@
                 <div id="StarterId" class="w3-third w3-padding-large w3-red">Starters</div>
             </a>
         </div>
+
         <div id="Pizza">
             @foreach($data['Pizza'] as $SubMenu)
-                <div id="Pizza" class="w3-container w3-white w3-padding-32">
-                    {{$SubMenu->name}}
-                    <span class="w3-right w3-tag w3-dark-grey w3-round">${{$SubMenu->price}}</span></h1>
+                <div id="Pizza" class="w3-container w3-white w3-padding-30">
+                    <h1><b>{{$SubMenu->name}}</b><span
+                            class='w3-right w3-tag w3-dark-grey w3-round'>${{$SubMenu->price}}</span></h1>
+                    <hr>
                 </div>
             @endforeach
         </div>
         <div id="Pasta" style="display: none">
             @foreach($data['Pasta'] as $SubMenu)
-                <div class="w3-container w3-white w3-padding-32">
-                    {{$SubMenu->name}}
-                    <span class="w3-right w3-tag w3-dark-grey w3-round">${{$SubMenu->price}}</span></h1>
+                <div class="w3-container w3-white w3-padding-30">
+                    <h1><b>{{$SubMenu->name}}</b><span
+                            class='w3-right w3-tag w3-dark-grey w3-round'>${{$SubMenu->price}}</span></h1>
                     <hr>
                 </div>
             @endforeach
@@ -56,9 +58,9 @@
         <div id="Starters" style="display: none">
 
             @foreach($data['Starters'] as $SubMenu)
-                <div class="w3-container w3-white w3-padding-32">
-                    {{$SubMenu->name}}
-                    <span class="w3-right w3-tag w3-dark-grey w3-round">${{$SubMenu->price}}</span></h1>
+                <div class="w3-container w3-white w3-padding-30">
+                    <h1><b>{{$SubMenu->name}}</b><span
+                            class='w3-right w3-tag w3-dark-grey w3-round'>${{$SubMenu->price}}</span></h1>
                     <hr>
                 </div>
             @endforeach
