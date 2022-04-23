@@ -16,10 +16,10 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $data['Pizza']=Menu::where('name','Pizza')->first('id')->SubMenus;
-        $data['Pasta']=Menu::where('name','Pasta')->first('id')->SubMenus;
-        $data['Starters']=Menu::where('name','Starters')->first('id')->SubMenus;
-        return view('menu',compact('data'));
+
+        $pizza_menu=Menu::where('name','Pizza')->first('id')->SubMenus;
+
+        return view('menu',compact('pizza_menu'));
     }
 
     /**
@@ -47,11 +47,19 @@ class MenuController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\cr  $cr
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show($id)
+    public function show()
     {
-        //
+
+
+    }
+    public function shows()
+    {
+        $pizza=Menu::where('name','Pizza')->first('id')->SubMenus;
+        $pasta=Menu::where('name','Pasta')->first('id')->SubMenus;
+        $starters=Menu::where('name','Starters')->first('id')->SubMenus;
+        return response()->json(['status' => 'success','data' => $pizza , 'data2'=> $pasta , 'data3'=>$starters]);
 
     }
 
